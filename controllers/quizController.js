@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-exports.getQuestions = async (req, res, next) => {
+exports.getQuestions = (req, res, next) => {
   const data = JSON.parse(
     fs.readFileSync(`${__dirname}/../data/questions.json`, "utf-8"),
   );

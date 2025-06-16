@@ -7,7 +7,7 @@ process.on("uncaughtException", (error) => {
 
 const app = require("./app");
 
-const server = app.listen(4000, "127.0.0.1", () => {
+const server = app.listen(4000, () => {
   console.log("Server is started on port 4000....");
 });
 

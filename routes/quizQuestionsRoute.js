@@ -3,6 +3,6 @@ const quizController = require("./../controllers/quizController");
 
 const Router = express.Router();
 
-Router.route("/").get(quizController.getQuestions);
+Router.get("/", quizController.getQuestions);
 
 module.exports = Router;
