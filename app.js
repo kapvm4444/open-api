@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 
 const quizQuestionRoute = require("./routes/quizQuestionsRoute");
-const AppError = require("./util/appError");
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
