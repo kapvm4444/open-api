@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
-const quizQuestionRoute = require("./routes/quizQuestionsRoute");
+const quizQuestionRouter = require("./routes/quizQuestionsRouter");
+const worldWiseRouter = require("./routes/worldWiseRouter");
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
@@ -10,7 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/quiz", quizQuestionRoute);
+app.use("/quiz", quizQuestionRouter);
+app.use("/ww", worldWiseRouter);
 
 app.all("/{*splat}", (req, res, next) => {
   res.end(
