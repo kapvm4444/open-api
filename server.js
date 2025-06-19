@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
+
 process.on("uncaughtException", (error) => {
   console.log(`SYNTAX ERROR`);
   console.log(`${error.name} => ${error.message}`);
@@ -7,8 +10,9 @@ process.on("uncaughtException", (error) => {
 
 const app = require("./app");
 
-const server = app.listen(443, () => {
-  console.log("Server is started on port 4000....");
+const port = process.env.PORT || 443;
+const server = app.listen(port, () => {
+  console.log(`Server is started http://127.0.0.1:${port}`);
 });
 
 process.on("unhandledRejection", (error) => {

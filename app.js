@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 
 const quizQuestionRouter = require("./routes/quizQuestionsRouter");
 const worldWiseRouter = require("./routes/worldWiseRouter");
@@ -8,6 +9,8 @@ const globalErrorHandler = require("./controllers/errorController");
 const app = express();
 
 app.use(cors());
+
+app.use(morgan("dev"));
 
 app.use(express.json());
 
