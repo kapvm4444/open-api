@@ -14,6 +14,8 @@ app.use(morgan("dev"));
 
 app.use(express.json());
 
+app.use(express.static(`${__dirname}/public`));
+
 app.use("/quiz", quizQuestionRouter);
 app.use("/ww", worldWiseRouter);
 
